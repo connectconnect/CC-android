@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/common_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_top_bar"
+        android:background="@drawable/title_bg_main"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/message_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="通讯录"
+            android:textColor="@color/bottom_text_color_normal"
+            android:textSize="18sp" />
+
+
+        <ImageView
+            android:id="@+id/iv_new_contact"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/common_tab_bg"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/add" />
+    </RelativeLayout>
+ <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="31dip"
+        android:layout_below="@+id/rl_meeting_top"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/edittext"
+        android:padding="5dp" >
+
+        <ImageView
+            android:id="@+id/input_del_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dip"
+            android:src="@drawable/del"
+            android:visibility="gone" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/input_search_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="5dp"
+            android:text="Search"
+            android:textColor="@color/gray1"
+            android:visibility="visible" >
+        </TextView>
+
+        <AutoCompleteTextView
+            android:id="@+id/search_input"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignWithParentIfMissing="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/input_del_img"
+            android:background="#00000000"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="#373737"
+            android:textColorHint="#C0C0C0"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/rl_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+           
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:cacheColorHint="#00000000"
+                android:descendantFocusability="afterDescendants"
+                android:divider="@color/divider_list"
+                android:dividerHeight="1px"
+                android:fastScrollEnabled="false" />
+			<com.connectconnect.cc.view.SideBar
+			    android:id="@+id/sidebar"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:background="@android:color/transparent"
+                android:clickable="true" 
+			    />
+            <TextView
+                android:id="@+id/floating_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/show_head_toast_bg"
+                android:gravity="center"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                android:textColor="@android:color/white"
+                android:textSize="40sp"
+                android:visibility="invisible" />
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

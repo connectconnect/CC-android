@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg" >
+    <RelativeLayout
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/title_bg_main"
+        android:gravity="center_vertical" >
+
+        <LinearLayout
+            android:id="@+id/iv_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/title_btn"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:onClick="back"
+                android:background="@drawable/title_back_icon" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="输入验证码"
+            android:textColor="@color/titletext"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/jgxm" />
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white" >
+        
+    	<TextView 
+    	    android:id="@+id/xxx"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:textColor="@color/black"
+    	    android:textSize="13dp"
+    	    android:layout_marginLeft="15dp"
+    	    android:layout_marginTop="10dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/yanzheng"
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="7dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/hqyzm_bg"
+                android:text="重获验证码"
+                android:textSize="13dp"
+                android:onClick="restart"
+                android:textColor="@color/white"
+                 />
+
+            <EditText
+                android:id="@+id/input_text_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignWithParentIfMissing="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/yanzheng"
+                android:background="#00000000"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:hint="请输入校验码"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingLeft="5dp"
+                android:textColor="#373737"
+                android:textColorHint="#C0C0C0"
+                android:textSize="14sp" />
+        </RelativeLayout>
+        
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+        
+        <Button
+                android:id="@+id/btn_next"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/sure_btn"
+                android:text="下一步"
+                   android:onClick="next"
+                android:textColor="@color/white"
+                android:textSize="18dp" />
+
+    </LinearLayout>
+</LinearLayout>
