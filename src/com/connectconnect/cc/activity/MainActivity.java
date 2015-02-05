@@ -27,6 +27,7 @@ public class MainActivity extends BaseActivity {
 	private int index;
 	// 当前fragment的index
 	private int currentTabIndex;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -35,9 +36,9 @@ public class MainActivity extends BaseActivity {
 		Log.d("homeActivity", "homeActivity onCreate");
 		startService(Intent);
 		initView();
-		
+
 	}
-	
+
 	/**
 	 * button点击事件
 	 * 
@@ -59,7 +60,8 @@ public class MainActivity extends BaseActivity {
 			break;
 		}
 		if (currentTabIndex != index) {
-			FragmentTransaction trx = getSupportFragmentManager().beginTransaction();
+			FragmentTransaction trx = getSupportFragmentManager()
+					.beginTransaction();
 			trx.hide(fragments[currentTabIndex]);
 			if (!fragments[index].isAdded()) {
 				trx.add(R.id.fragment_container, fragments[index]);
@@ -71,6 +73,7 @@ public class MainActivity extends BaseActivity {
 		mTabs[index].setSelected(true);
 		currentTabIndex = index;
 	}
+
 	@Override
 	public void initView() {
 		// TODO Auto-generated method stub
@@ -85,13 +88,15 @@ public class MainActivity extends BaseActivity {
 		chatHistoryFragment = new ChatAllHistoryFragment();
 		contactListFragment = new ContactlistFragment();
 		settingFragment = new SettingsFragment();
-		ccFragment=new CCFragment();
-		fragments = new Fragment[] { chatHistoryFragment, contactListFragment, settingFragment ,ccFragment};
+		ccFragment = new CCFragment();
+		fragments = new Fragment[] { chatHistoryFragment, contactListFragment,
+				settingFragment, ccFragment };
 		// 添加显示第一个fragment
-		getSupportFragmentManager().beginTransaction().add(R.id.fragment_container, chatHistoryFragment)
-				.add(R.id.fragment_container, contactListFragment).add(R.id.fragment_container, ccFragment).hide(ccFragment).hide(contactListFragment).show(chatHistoryFragment).commit();
+		getSupportFragmentManager().beginTransaction()
+				.add(R.id.fragment_container, chatHistoryFragment)
+				.add(R.id.fragment_container, contactListFragment)
+				.add(R.id.fragment_container, ccFragment).hide(ccFragment)
+				.hide(contactListFragment).show(chatHistoryFragment).commit();
 	}
-	
-
 
 }
